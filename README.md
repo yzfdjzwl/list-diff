@@ -24,7 +24,8 @@ var diff = require("list-diff2")
 var oldList = [{id: "a"}, {id: "b"}, {id: "c"}, {id: "d"}, {id: "e"}]
 var newList = [{id: "c"}, {id: "a"}, {id: "b"}, {id: "e"}, {id: "f"}]
 
-var moves = diff(oldList, newList, "id")
+var diffs = diff(oldList, newList, "id"); 
+var moves = diffs.moves;
 // `moves` is a sequence of actions (remove or insert): 
 // type 0 is removing, type 1 is inserting
 // moves: [
